@@ -707,6 +707,13 @@ class SingularitySpec(ContainerSpec):
     container: str = attr.ib("singularity", metadata={"help_string": "container type"})
 
 
+@attr.s(auto_attribs=True, kw_only=True)
+class ApptainerSpec(ContainerSpec):
+    """Particularize container specifications to Apptainer."""
+
+    container: str = attr.ib("apptainer", metadata={"help_string": "container type"})
+
+
 @attr.s
 class LazyInterface:
     _task: "core.TaskBase" = attr.ib()
